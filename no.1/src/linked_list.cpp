@@ -1,5 +1,4 @@
-#include <iostream>
-
+#include <stdio.h>
 using namespace std;
 
 typedef struct Node{
@@ -42,7 +41,7 @@ void Linkedlist::printReverse() {
   // TODO
     Node_list* comp = first;
     for(int i = 0; i<num;i++){
-        cout << comp->val << endl;
+        printf("%d\n", comp->val);
         comp = comp->post;
     }
 }

@@ -1,4 +1,5 @@
-#include <iostream>
+#include <stdio.h>
+#include <string.h>
 
 using namespace std;
 
@@ -16,16 +17,18 @@ void dfs(int n, int p){
     }
 
     if(N == n){
-        cout << cnt << endl;
+        printf("%d\n", cnt);
         cnt++;
         for(int i = 0; i<N;i++){
+            if (i==0) printf("[");
             for(int j=0;j<N;j++){
                 if(Nqueen[i][j]==-1){
-                    cout << j << " ";
+                    printf("%d ", j);
                 }
             }
+            if(i==N-1) printf("]");
         }
-        cout << endl;
+        printf("\n");
         return;
     }
 
@@ -38,7 +41,8 @@ void dfs(int n, int p){
 
 
 int main(){
-    cin >> N;
+    printf("enter N's value : ");
+    scanf("%d", &N);
     dfs(0, 0);
     return 0;
 }
